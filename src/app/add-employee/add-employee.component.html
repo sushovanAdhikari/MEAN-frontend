@@ -1,0 +1,139 @@
+       <div mat-dialog-content class="dialog-box" [formGroup]="myForm">
+        <table cellspacing="0" class="full-width">
+            <tr class="BasicInfo">
+                <td>
+                    <mat-form-field class="full-width">
+                        <input formControlName="firstName" matInput [value]="data.firstName" name="firstName" required minlength="2" maxlength="35">   
+                        <mat-placeholder>First Name
+                            <!-- <span *ngIf="this.myForm.get('firstName').errors.required"  style="color: red"> required </span> -->
+                            <!-- <span *ngIf="firstName.errors.pattern"  style="color: red"> Patter </span> -->
+                            <!-- <span *ngIf="firstName.errors.maxlength"  style="color: red"> Max 35 characters </span> -->    
+                        </mat-placeholder>
+
+
+                        <mat-error *ngIf="firstName.invalid">{{getfirstNameError()}}</mat-error>
+                        <!-- <mat-error *ngIf="firstName.errors?.minlength">{{getfirstNameError()}}</mat-error> -->
+                        
+                        <!-- <mat-error *ngIf="myForm.controls['phone'].hasError('minlength')"> Min Length Error</mat-error> -->
+                        <!-- <p *ngIf=[firstName.errors]>First Name Error</p> --> 
+                    </mat-form-field>
+                    <!--  -->
+                </td>
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <input formControlName="lastName" matInput [value]="data.lastName" name="lastName" required minlength="2" maxlength="35">
+                        <mat-placeholder>Last Name</mat-placeholder>
+                        <mat-error *ngIf="lastName.invalid">{{getlastNameError()}}</mat-error>
+                    </mat-form-field>
+                    
+                </td>
+            </tr>
+        </table>
+        <table cellspacing="0" class="full-width">
+            <tr class="LocationInfo">
+                <td>
+                    <mat-form-field class="full-width">
+                        <input formControlName="address" matInput [value]="data.address" name="address" required minlength="10">
+                        <mat-placeholder>Address</mat-placeholder>
+                        <!-- <mat-error *ngIf="address.invalid">{{ getAddressError()}}</mat-error> -->
+                        <mat-error *ngIf="address.errors?.minlength">{{getAddressError()}}</mat-error>
+
+                    </mat-form-field>
+                
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <input formControlName="city" matInput  [value]="data.city" name="city" required minlength="5">
+                        <mat-placeholder>City</mat-placeholder>
+                        <mat-error *ngIf="city.invalid">{{ getCityError()}}</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+             <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <!-- <input formControlName="state" matInput  [value]="data.state" name="state" required minlength="2">
+                        <mat-placeholder>state</mat-placeholder> -->
+
+                        <mat-label>State</mat-label>
+
+                        <mat-select formControlName="state" required>
+                            <mat-option *ngFor = "let state of states" [value] = "state.value">
+                                {{state.viewValue}}
+                            </mat-option>    
+                        </mat-select>
+
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <input formControlName="zip" matInput  [value]="data.zip" name="zip" required minlength="5">
+                        <mat-placeholder>zip</mat-placeholder>
+                        <mat-error *ngIf="zip.invalid">{{ getZipError()}}</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <!-- <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <input formControlName="postalCode" matInput  [value]="data.postalCode" name="postalCode" required minlength="5">
+                        <mat-placeholder>postal Code</mat-placeholder>
+                        <mat-error *ngIf="postalCode.invalid">{{getPostalError()}}</mat-error>
+                    </mat-form-field>
+                </td>
+    
+            </tr> -->
+        </table>
+
+        <table cellspacing="0" class="full-width">
+            <tr class="Contact">
+                    <td>
+                        <mat-form-field class="full-width">
+                            <input formControlName="homephone" matInput  [value]="data.homephone" name="homephone" required minlength="10">
+                            <mat-placeholder>homephone</mat-placeholder>
+                            <!-- <mat-error *ngIf="homephone.invalid">{{gethomePhoneError}}</mat-error> -->
+                        </mat-form-field> 
+                    </td>
+            </tr>
+
+            <tr> 
+                    <td>
+                        <mat-form-field class="full-width">
+                            <input formControlName="cellphone" matInput  [value]="data.cellphone" name="cellphone" required minlength="10">
+                            <mat-placeholder>cellphone </mat-placeholder>
+                            <mat-error *ngIf="cellphone.invalid">{{getcellPhoneError()}}</mat-error>
+                        </mat-form-field>
+                    </td>
+            </tr>
+
+            <tr>
+                    <td>
+                        <mat-form-field class="full-width">
+                            <input formControlName="email" matInput  [value]="data.email" name="email" required minlength="10">
+                            <mat-placeholder>email </mat-placeholder>
+                            <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
+                        </mat-form-field>
+                    </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div mat-dialog-actions>
+            <button mat-button (click)="closeDialog()"> Cancel
+                </button> 
+            <button mat-button (click)="onSave()"> Save
+            </button>
+
+
+    </div>

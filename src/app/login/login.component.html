@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+
+
+<mat-card class="login-box">
+    <mat-card-header class="login-header">
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="login-content">
+      <form class="example-form" [formGroup] = "myForm">
+        <table class="example-full-width" cellspacing="0">
+          <tr >
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" formControlName="Email" name="email" required>
+              </mat-form-field>
+
+              <!-- <mat-form-field>
+                <input matInput placeholder="Enter your email" [formControlName]="Email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field> -->
+
+            </td>
+          </tr>
+          <tr >
+          <td><mat-form-field class="example-full-width">
+            <input  matInput placeholder="Password" formControlName="Password" name="password" required>
+          </mat-form-field></td>
+        </tr></table>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="login-button">
+      <button mat-raised-button color="primary" (click)="loginUser()" routerLinkActive="active">Login</button>
+    </mat-card-actions>
+
+    <!-- <mat-card-actions class="login-button">
+      <button mat-raised-button (click)="getData()" color="primary">Login</button>
+    </mat-card-actions> -->
+
+  </mat-card>

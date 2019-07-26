@@ -1,0 +1,52 @@
+
+.dashboard-content{
+    display: flex;
+    flex-flow: column;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    
+}
+
+button {
+    width: 15vw;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-family: 'Alegreya', serif;
+    font-size: medium;
+}
+
+button.mat-raised-button.mat-primary{
+    width: 125px;
+}
+
+table{
+    font-family: 'Alegreya', serif;
+}
+
+
+.dashboard-header{
+    display: flex !important;
+    justify-content: space-between;
+}
+
+th.mat-header-cell.cdk-column-name.mat-column-name.ng-star-inserted {
+    font-size: medium;
+    font-weight: 900;
+}
+
+th.mat-header-cell.cdk-column-email.mat-column-email.ng-star-inserted {
+    font-size: medium;
+    font-weight: 900;
+}
+
+
+td.mat-cell.cdk-column-name.mat-column-name.ng-star-inserted {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.employee-name{
+    color: blue;
+    text-decoration: underline;
+}

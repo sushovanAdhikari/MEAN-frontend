@@ -1,0 +1,48 @@
+button {
+    color: white;
+    background-color: #2a377a;
+}
+
+
+.dialog-box{
+    font-family: 'Alegreya', serif;
+}
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    font-family: 'Alegreya', serif;
+    text-align: left;
+}
+
+table{
+    width: 100%;
+}
+
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    font-family: 'Alegreya', serif;
+    text-align: left;
+    width: 100%;
+}
+
+.mat-dialog-actions {
+    padding: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 52px;
+    align-items: center;
+    margin-bottom: -24px;
+    justify-content: space-between;
+}
+
+button {
+    width: 100px;
+    border-radius: 17px;
+    margin-bottom: 10px;
+    font-family: 'Alegreya', serif;
+    font-size: medium;
+}
+
